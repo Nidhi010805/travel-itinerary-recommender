@@ -18,16 +18,13 @@ A mini Next.js project where users can enter a destination and get a curated tra
 
 ## ⚡ Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Nidhi010805/travel-itinerary-recommender.git
-   cd travel-itinerary-recommender
-   
-2. Install dependencies
-npm install
+```bash
+# Clone the repository
+git clone https://github.com/Nidhi010805/travel-itinerary-recommender.git
+cd travel-itinerary-recommender
 
-  3. Run development server
-npm run dev
+# Install dependencies and run the dev server
+npm install && npm run dev
 
  4. Open app
 Visit http://localhost:3000
