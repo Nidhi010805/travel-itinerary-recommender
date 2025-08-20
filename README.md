@@ -1,0 +1,34 @@
+# ✈️ Travel Itinerary Recommender
+
+A mini Next.js project where users can enter a destination and get a curated travel itinerary including highlights, best time to visit, and activities.
+
+---
+
+## 🚀 Features
+- Built with **Next.js 13+ App Router**
+- Uses **API Routes** (`/api/recommend`)
+- Tailwind CSS for styling
+- Destination dataset stored locally
+- Returns highlights, best time, and activities
+
+---
+
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/your-username/travel-itinerary-recommender.git
+cd travel-itinerary-recommender
+
+2. Install dependencies
+npm install
+
+3. Run development server
+npm run dev
+
+4. Open app
+Visit http://localhost:3000
+

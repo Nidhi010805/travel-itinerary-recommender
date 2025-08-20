@@ -1,0 +1,205 @@
+/* globals.css */
+
+/* Base styles */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #93c5fd;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
+}
+
+body {
+  background: var(--bg-light);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* Overall container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Search form */
+.search {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input */
+.input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.85rem;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+  transform: scale(1.01);
+}
+
+/* Button */
+.button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-weight: 600;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+.button:disabled {
+  background: var(--primary-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Error message */
+.error {
+  color: #dc2626;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  background: #fee2e2;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Grid layout */
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Desktop par horizontal row-wise */
+  align-items: start;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.7);
+  border-radius: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+/* Card image */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+.card:hover .card-image {
+  transform: scale(1.03);
+}
+
+/* Best time */
+.best-time {
+  font-size: 0.95rem;
+  margin: 0.6rem 0;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+/* Activities list */
+.activities {
+  margin: 0.6rem 0 0.8rem;
+  padding-left: 1.2rem;
+  color: #374151;
+  font-size: 0.92rem;
+  list-style-type: disc;
+}
+.activities li {
+  margin-bottom: 0.25rem;
+}
+
+/* Tags (chips) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.tag {
+  background: var(--primary-light);
+  color: #1e3a8a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+.tag:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+  .input {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+  }
+  .button {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+  .card-image {
+    height: 150px;
+  }
+}
+
+/* Text muted */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
