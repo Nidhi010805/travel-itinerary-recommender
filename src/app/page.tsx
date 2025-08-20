@@ -1,7 +1,7 @@
-// app/page.tsx
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type Result = {
   place: string;
@@ -32,11 +32,16 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: destination }),
       });
-      const data = await res.json();
+
+      const data: { ok: boolean; error?: string; results?: Result[] } = await res.json();
       if (!res.ok || !data.ok) throw new Error(data?.error || "Failed to fetch");
-      setResults(data.results as Result[]);
-    } catch (err: any) {
-      setError(err?.message || "Something went wrong");
+      setResults(data.results ?? []);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Something went wrong");
+      }
     } finally {
       setLoading(false);
     }
@@ -73,9 +78,11 @@ export default function Home() {
         {results.map((r, idx) => (
           <article key={idx} className="card">
             {r.image && (
-              <img
+              <Image
                 src={r.image}
                 alt={r.place}
+                width={400}
+                height={250}
                 className="card-image"
               />
             )}
@@ -111,7 +118,9 @@ export default function Home() {
       </section>
 
       {!loading && results.length === 0 && (
-        <p className="muted">💡 Try "Goa", "Kerala", "Jaipur", etc.</p>
+        <p className="muted">
+          💡 Try &quot;Goa&quot;, &quot;Kerala&quot;, &quot;Jaipur&quot;, etc.
+        </p>
       )}
     </main>
   );
